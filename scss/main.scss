@@ -1,5 +1,62 @@
-$primarycolor: #444;
+@import "config";
+* {
+  box-sizing: border-box;
+}
 body {
+  @include back;
   background: $primarycolor;
   color: #fff;
+  margin: 0;
+  height: 100%;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  line-height: 1.5;
+}
+//headings
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+  &.large-heading {
+    font-size: 6rem;
+  }
+  &.small-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primarycolor, 2), 0.5);
+  }
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+header {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.secondary-text {
+  color: $secondarycolor;
+}
+
+main {
+  padding: 4rem;
+  height: 100%;
+  .icons {
+    &:hover {
+      color: #f00;
+      @include easeOut;
+    }
+    margin-top: 4rem;
+    a {
+      padding: 0.4rem;
+    }
+  }
+  &#home {
+    overflow: hidden;
+    h1 {
+      margin-top: 20vh;
+    }
+  }
 }
