@@ -1,4 +1,5 @@
 @import "config";
+@import "menu";
 * {
   box-sizing: border-box;
 }
@@ -44,12 +45,12 @@ main {
   padding: 4rem;
   height: 100%;
   .icons {
-    &:hover {
-      color: #f00;
-      @include easeOut;
-    }
     margin-top: 4rem;
     a {
+      &:hover {
+        color: $secondarycolor;
+        @include easeOut;
+      }
       padding: 0.4rem;
     }
   }
