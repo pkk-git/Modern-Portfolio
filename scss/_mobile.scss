@@ -1,0 +1,43 @@
+@include mediaXL {
+}
+@include mediaLG {
+}
+@include mediaMD {
+  main {
+    text-align: center;
+    align-items: center;
+    .large-heading {
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+  }
+  .menu-nav,
+  .mjpg {
+    float: none;
+    width: 100%;
+    min-height: 0;
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(100%, 0, 0);
+    font-size: 24px;
+  }
+  .mjpg {
+    height: 25vh;
+    transform: translate3d(-100%, 0, 0);
+    .portrait {
+      background: url("../img/propic.jpg");
+      width: 150px;
+      height: 150px;
+      background-size: cover;
+    }
+  }
+}
+@include mediaSM {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+}
