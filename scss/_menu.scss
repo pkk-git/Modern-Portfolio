@@ -27,3 +27,79 @@
     }
   }
 }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  visibility: hidden;
+  &.show {
+    visibility: visible;
+  }
+  .mjpg,
+  .menu-nav {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    float: left;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .menu-nav {
+    margin: 0;
+    padding: 0;
+    background: rgba(darken($primarycolor, 5), 0.9);
+    list-style: none;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  .mjpg {
+    background: rgba($primarycolor, 0.9);
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+    .portrait {
+      width: 250px;
+      height: 250px;
+      background: url("../img/propic.jpg");
+      background-size: cover;
+      border-radius: 50%;
+      border: solid 3px $secondarycolor;
+    }
+  }
+  .item {
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+    &.current > a {
+      color: $secondarycolor;
+    }
+  }
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    font-weight: 300;
+    padding: 1rem 0;
+    color: #fff;
+    @include easeOut;
+    &:hover {
+      color: $secondarycolor;
+    }
+  }
+}
+
+@for $x from 1 through 4 {
+  .item:nth-child(#{$x}) {
+    transition-delay: 0.1s * $x;
+  }
+}
