@@ -35,6 +35,15 @@
       background-size: cover;
     }
   }
+  .about-info {
+    grid-template-areas:
+      "bio-image"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+    grid-template-columns: 1fr;
+  }
 }
 @include mediaSM {
   main#home h1 {

@@ -1,13 +1,12 @@
 @import "config";
 @import "menu";
-@import "mobile";
 * {
   box-sizing: border-box;
 }
 body {
   @include back;
   background: $primarycolor;
-  color: #fff;
+  color: set-text-color($primarycolor);
   margin: 0;
   height: 100%;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -44,7 +43,7 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  min-height: calc(100vh-60px);
   .icons {
     margin-top: 4rem;
     a {
@@ -62,3 +61,44 @@ main {
     }
   }
 }
+.about-info {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+    "bio-image bio bio"
+    "job1 job2 job3";
+  grid-template-columns: repeat(3, 1fr);
+  .bio-image {
+    grid-area: bio-image;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondarycolor 3px solid;
+  }
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+  .job1 {
+    grid-area: job1;
+  }
+  .job2 {
+    grid-area: job2;
+  }
+  .job3 {
+    grid-area: job3;
+  }
+  .job {
+    background: lighten($color: $primarycolor, $amount: 5);
+    padding: 1rem;
+    border-bottom: $secondarycolor 5px solid;
+  }
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($color: $primarycolor, $amount: 10);
+  color: set-text-color($primarycolor);
+  height: 60px;
+}
+@import "mobile";
