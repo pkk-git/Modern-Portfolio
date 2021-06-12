@@ -1,6 +1,12 @@
 @include mediaXL {
+  .myproj {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 @include mediaLG {
+  .myproj {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 @include mediaMD {
   main {
@@ -44,9 +50,15 @@
       "job3";
     grid-template-columns: 1fr;
   }
+  .myproj {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @include mediaSM {
   main#home h1 {
     margin-top: 10vh;
+  }
+  .myproj {
+    grid-template-columns: 1fr;
   }
 }
