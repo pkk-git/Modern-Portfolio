@@ -98,7 +98,7 @@
   }
 }
 
-@for $x from 1 through 4 {
+@for $x from 1 through 5 {
   .item:nth-child(#{$x}) {
     transition-delay: 0.1s * $x;
   }
